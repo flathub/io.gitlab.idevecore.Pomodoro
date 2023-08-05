@@ -3,7 +3,7 @@
   "runtime": "org.gnome.Platform",
   "runtime-version": "44",
   "sdk": "org.gnome.Sdk",
-  "command": "io.gitlab.idevecore.Pomodoro",
+  "command": "pomodoro",
   "finish-args": [
     "--share=network",
     "--share=ipc",
@@ -24,6 +24,21 @@
     "*.a"
   ],
   "modules": [
+    {
+      "name": "blueprint",
+      "buildsystem": "meson",
+      "cleanup": [
+        "*"
+      ],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler",
+          "tag": "v0.10.0",
+          "commit": "2a39a16391122af2f3d812e478c1c1398c98b972"
+        }
+      ]
+    },
     {
       "name": "gsound",
       "buildsystem": "meson",
@@ -85,7 +100,7 @@
         {
           "type": "git",
           "url": "https://gitlab.com/idevecore/pomodoro.git",
-          "commit": "c1b6e494bafbf82bb8280a3f27bd797b9f0784ed"
+          "commit": "ba94b3a9c7ec8ff44147d49fd4fef5ca0ac9e77e"
         }
       ]
     }
