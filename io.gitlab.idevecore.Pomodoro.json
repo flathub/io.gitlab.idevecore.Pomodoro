@@ -118,7 +118,6 @@
         }
       ]
     },
-    ,
     {
       "name": "pomodoro",
       "builddir": true,
