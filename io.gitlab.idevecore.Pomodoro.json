@@ -72,7 +72,8 @@
       "sources": [
         {
           "type": "git",
-          "url": "https://gitlab.gnome.org/GNOME/gsound.git"
+          "url": "https://gitlab.gnome.org/GNOME/gsound.git",
+          "commit": "95d36d60cf53e0e7c5d5325e0f1f4fc765a611ae"
         }
       ],
       "modules": [
