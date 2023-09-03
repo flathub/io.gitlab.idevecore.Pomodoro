@@ -42,12 +42,28 @@
     {
       "name": "libgda",
       "buildsystem": "meson",
+      "config-opts": [
+        "-Djson=true"
+      ],
+      "build-options": {
+        "env": {
+          "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR": "/app/share/gir-1.0",
+          "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_TYPELIBDIR": "/app/lib/girepository-1.0"
+        }
+      },
       "sources": [
         {
-          "type": "git",
-          "url": "https://gitlab.gnome.org/GNOME/libgda",
-          "tag": "LIBGDA_6_0_0",
-          "commit": "5d23892e1c8abd931ad2a7bd24cd543b93ccb04c"
+          "type": "archive",
+          "url": "http://ftp.gnome.org/pub/GNOME/sources/libgda/6.0/libgda-6.0.0.tar.xz",
+          "sha256": "995f4b420e666da5c8bac9faf55e7aedbe3789c525d634720a53be3ccf27a670"
+        },
+        {
+          "type": "patch",
+          "path": "patches/0001-Fix-undefined-behavior-due-to-signed-integer-overflo.patch"
+        },
+        {
+          "type": "patch",
+          "path": "patches/libgda-no-gtkdoc-markers.patch"
         }
       ],
       "modules": [
@@ -64,6 +80,9 @@
             }
           ]
         }
+      ],
+      "cleanup": [
+        "/share/doc"
       ]
     },
     {
@@ -127,7 +146,7 @@
         {
           "type": "git",
           "url": "https://gitlab.com/idevecore/pomodoro.git",
-          "commit": "628b4bed4963b301dc46de3dc9c3cd6a355d7687"
+          "commit": "b70b42678bba3d90d0e5432be9cc49c8faef22f7"
         }
       ]
     }
